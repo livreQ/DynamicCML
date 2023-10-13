@@ -1,0 +1,36 @@
+!!python/object:argparse.Namespace
+dataset: omniglot
+n_shots: 5
+n_shots_test: 15
+m_tr: 20 #n_shots + n_shots_test, pretrain, same sample complexity as MAML. validation is used for evaluation not update parameters
+m_va: 10
+n_ways: 10
+deeper: 0
+hidden_size: 64
+model_name: DCML
+model_name_impv: DCML_pre
+method: DMOGD
+n_pretrain_epochs: 1000
+n_pretrain_batches: 100
+patience: 5
+base_algo: SGD
+meta_algo: OGD
+#pretrain_model: models/omniglot_dmogd.model
+#===========  adjust =========
+pretrain_batch_size: 5 #task batch size
+K: 1 # inner epoch, steps=K*n_shots(m_tr for trainning)*n_ways/inner_batch_size
+inner_batch_size: 25
+meta_lr: 0.05
+step_size: 0.06 #base_lr
+#============ back up ==========
+# pretrain_batch_size: 5 #task batch size
+# K: 1 # inner epoch, steps=K*n_shots(m_tr for trainning)*n_ways/inner_batch_size
+# inner_batch_size: 20
+# meta_lr: 0.2
+# step_size: 0.001 #base_lr
+#===============================
+# pretrain_batch_size: 25 #task batch size
+# K: 1 # inner epoch, steps=K*n_shots(m_tr for trainning)*n_ways/inner_batch_size
+# inner_batch_size: 200
+# meta_lr: 0.2
+# step_size: 0.1 #base_lr

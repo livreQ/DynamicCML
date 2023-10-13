@@ -1,0 +1,28 @@
+!!python/object:argparse.Namespace
+dataset: omniglot
+n_shots: 5
+n_shots_test: 15
+m_tr: 5 #n_shots + n_shots_test, pretrain, same sample complexity as MAML. validation is used for evaluation not update parameters
+m_va: 15
+n_ways: 10
+timesteps: 10000
+deeper: 0
+hidden_size: 64
+prob_statio: 0.0
+prob_env_switch: 1.0
+model_name: DCML
+model_name_impv: DCML_oracle
+method: DMOGD
+base_algo: SGD
+meta_algo: OGD
+K: 8 # inner steps
+inner_batch_size: 50
+L: 100
+alpha: 4
+D_hat_guess: 100
+rho: 1.0
+eta_0: 6.0
+epsilon_0_rate: 1.0
+switch_method: 1 #oracle-1, BOCD-2, sliding win-3, static-4
+win: 10
+pretrain_model: models/omniglot_maml.model

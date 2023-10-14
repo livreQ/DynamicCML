@@ -13,13 +13,13 @@ patience: 10
 pretrain_batch_size: 16
 meta_lr: 0.001
 num_steps: 16
-step_size: 0.05
+step_size: 0.001
 first_order: 0
 learn_step_size: true
 per_param_step_size: true
 cl_accumulate: true
 cl_strategy: loss_smooth
-cl_strategy_thres: 1.0
+cl_strategy_thres: 2.5
 cl_tbd_thres: -2
 mean_eta: 0.001
 std_init: 0.01

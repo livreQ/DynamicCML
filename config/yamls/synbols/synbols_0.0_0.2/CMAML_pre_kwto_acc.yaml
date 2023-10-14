@@ -11,7 +11,7 @@ model_name_impv: CMAML_hyper
 n_pretrain_epochs: 1000
 patience: 10
 pretrain_batch_size: 16
-meta_lr: 0.001
+meta_lr: 0.0005
 num_steps: 16
 step_size: 0.001
 first_order: 0
